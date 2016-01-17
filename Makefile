@@ -35,7 +35,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 pytn2016_click_tutorial tests
+	flake8 click_tutorial tests
 
 test:
 	python setup.py test
@@ -44,15 +44,15 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source pytn2016_click_tutorial setup.py test
+	coverage run --source click_tutorial setup.py test
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
 
 docs:
-	rm -f docs/pytn2016_click_tutorial.rst
+	rm -f docs/click_tutorial.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ pytn2016_click_tutorial
+	sphinx-apidoc -o docs/ click_tutorial
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html

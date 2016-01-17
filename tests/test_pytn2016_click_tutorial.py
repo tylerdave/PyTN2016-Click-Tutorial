@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-test_pytn2016_click_tutorial
+test_click_tutorial
 ----------------------------------
 
-Tests for `pytn2016_click_tutorial` module.
+Tests for `click_tutorial` module.
 """
 
 import unittest
 
-import pytn2016_click_tutorial
+import click_tutorial
 
 
 class TestPytn2016_click_tutorial(unittest.TestCase):
@@ -19,7 +19,7 @@ class TestPytn2016_click_tutorial(unittest.TestCase):
         pass
 
     def test_something(self):
-        assert(pytn2016_click_tutorial.hello_world())
+        assert(click_tutorial.hello_world())
         pass
 
     def tearDown(self):

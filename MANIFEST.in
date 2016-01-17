@@ -11,4 +11,4 @@ recursive-exclude * *.py[co]
 recursive-include docs *.rst conf.py Makefile make.bat
 
 include versioneer.py
-include pytn2016_click_tutorial/_version.py
+include click_tutorial/_version.py

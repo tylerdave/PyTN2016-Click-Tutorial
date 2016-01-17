@@ -1,4 +1,4 @@
-"""A setuptools based setup module for pytn2016_click_tutorial"""
+"""A setuptools based setup module for click_tutorial"""
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -18,7 +18,11 @@ with open(path.join(here, 'HISTORY.rst'), encoding='utf-8') as history_file:
 
 requirements = [
     # TODO: put package requirements here
-    'click',
+    'click>=6.0',
+    'colorama',
+    'requests>=2.0',
+    'httpbin',
+    'pytest',
 ]
 
 test_requirements = [
@@ -26,24 +30,23 @@ test_requirements = [
 ]
 
 setup(
-    name='pytn2016_click_tutorial',
+    name='click_tutorial',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     description="Tutorial for writing command line applications using click.",
     long_description=readme + '\n\n' + history,
     author="Dave Forgac",
     author_email='tylerdave@tylerdave.com',
-    url='https://github.com/tylerdave/pytn2016_click_tutorial',
+    url='https://github.com/tylerdave/click_tutorial',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     entry_points={
         'console_scripts':[
-            'pytn2016_click_tutorial=pytn2016_click_tutorial.cli:cli',
+            'pytn=click_tutorial.cli:cli',
             ],
         },
     include_package_data=True,
     install_requires=requirements,
     license="MIT",
-    keywords='pytn2016_click_tutorial',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

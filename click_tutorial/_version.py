@@ -37,8 +37,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440"
     cfg.tag_prefix = ""
-    cfg.parentdir_prefix = "pytn2016_click_tutorial-"
-    cfg.versionfile_source = "pytn2016_click_tutorial/_version.py"
+    cfg.parentdir_prefix = "click_tutorial-"
+    cfg.versionfile_source = "click_tutorial/_version.py"
     cfg.verbose = False
     return cfg
 
