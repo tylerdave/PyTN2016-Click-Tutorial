@@ -13,13 +13,16 @@ import unittest
 import click_tutorial
 
 
-class TestPytn2016_click_tutorial(unittest.TestCase):
+class TestClickTutorial(unittest.TestCase):
 
     def setUp(self):
         pass
 
     def test_something(self):
         assert(click_tutorial.hello_world())
+        pass
+
+    def test_httpbin(self):
         pass
 
     def tearDown(self):
