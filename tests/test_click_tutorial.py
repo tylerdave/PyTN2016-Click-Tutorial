@@ -18,7 +18,7 @@ class TestClickTutorial(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_something(self):
+    def test_hello_world(self):
         assert(click_tutorial.hello_world())
         pass
 
