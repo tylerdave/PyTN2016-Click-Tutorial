@@ -66,9 +66,9 @@ Get The Tutorial
 * (Optional) Fork this repo on GitHub
 * Clone the repo locally (using either this repo's URL or that of your new fork.)
 
-.. code-block:: console
-
-  git clone https://github.com/tylerdave/PyTN2016-Click-Tutorial.git
+  .. code-block:: console
+  
+    git clone https://github.com/tylerdave/PyTN2016-Click-Tutorial.git
 
 Install The Tutorial
 --------------------
@@ -79,13 +79,13 @@ installation.
 * cd to cloned tutorial directory
 * Install the package in editable mode:
 
-.. code-block:: console
-
-  pip install -e .
+  .. code-block:: console
+  
+    pip install -e .
 
 * Run 'prereqs' tests to verify installation:
 
-.. code-block:: console
-
-  py.test -v prereqs
+  .. code-block:: console
+  
+    py.test -v prereqs
 
