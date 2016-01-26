@@ -35,8 +35,7 @@ developing Python code.
   
     pip install virtualenv
 
-  This will either install the package or let you know it's already installed. 
-If it is already installed, you will see:
+  This will either install the package or let you know it's already installed. If it is already installed, you will see:
 
   .. code-block:: console
     
