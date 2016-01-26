@@ -9,7 +9,8 @@ def get_valid_tutorial_steps():
     """ Find and return a list of test step modules in the tutorial dir. """
 
     try:
-        return [f[4:6] for f in os.listdir('tutorial') if re.search('step\d{2}\.py', f)]
+        return sorted([f[4:6] for f in os.listdir('tutorial') if \
+                re.search('step\d{2}\.py', f)])
     except OSError as e:
         click.secho(str(e), err=True, fg='red')
         click.secho("No tutorial files found. (This command must be run from" \
