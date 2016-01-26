@@ -1,4 +1,11 @@
 #!/usr/bin/env python
+"""
+Tutorial Step 00: Hello, World!
+-------------------------------
+
+This test should be passing already!
+
+"""
 import unittest
 from click.testing import CliRunner
 

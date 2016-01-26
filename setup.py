@@ -22,11 +22,11 @@ test_requirements = [
 requirements = [
     'click>=6.0',
     'colorama',
+    'importlib',
     'requests>=2.0',
     'httpbin',
     'pytest',
     'reqcli',
-    'mock',
 ] + test_requirements
 
 setup(
@@ -43,6 +43,7 @@ setup(
         'console_scripts':[
             'pytn=click_tutorial.cli:cli',
             'httpbin=click_tutorial.httpbin_runner:run_httpbin',
+            'tutorial=click_tutorial.tutorial:cli',
             ],
         },
     include_package_data=True,
