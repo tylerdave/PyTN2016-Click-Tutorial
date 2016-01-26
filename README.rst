@@ -72,7 +72,7 @@ developing Python code.
 
   .. code-block:: console
 
-    click_tutorial\bin\activate
+    click_tutorial\Scripts\activate
   
 Get The Tutorial
 ----------------
