@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
 from codecs import open
 from os import path
 from setuptools import setup
@@ -22,12 +23,18 @@ test_requirements = [
 requirements = [
     'click>=6.0',
     'colorama',
-    'importlib',
     'requests>=2.0',
     'httpbin',
     'pytest',
     'reqcli',
 ] + test_requirements
+
+python2_requirements = [
+    'importlib',
+    ]
+
+if sys.version_info[0] == 2:
+    requirements += python2_requirements
 
 setup(
     name='click_tutorial',
