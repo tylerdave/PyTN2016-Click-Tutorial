@@ -66,13 +66,13 @@ developing Python code.
 
   .. code-block:: console
   
-    source bin/activate
+    source click_tutorial/bin/activate
 
   *or on Windows:*
 
   .. code-block:: console
 
-    bin/activate.exe
+    click_tutorial\bin\activate
   
 Get The Tutorial
 ----------------
