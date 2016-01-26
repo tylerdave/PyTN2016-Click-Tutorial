@@ -60,14 +60,32 @@ If it is already installed, you will see:
 
   bin/activate.exe
   
-Install Tutorial
+Get The Tutorial
 ----------------
+
+* (Optional) Fork this repo on GitHub
+* Clone the repo locally (using either this repo's URL or that of your new fork.)
+
+.. code-block:: console
+
+  git clone https://github.com/tylerdave/PyTN2016-Click-Tutorial.git
+
+Install The Tutorial
+--------------------
 
 The tutorial repo is configured to be a Python package in order to ease
 installation.
 
-# 
-# (optional) Fork this repo on GitHub
-# Clone the repo locally (using either this repo's URL or that of your new
-fork.)
-# Install the package in editable mode and 
+* cd to cloned tutorial directory
+* Install the package in editable mode:
+
+.. code-block:: console
+
+  pip install -e .
+
+* Run 'prereqs' tests to verify installation:
+
+.. code-block:: console
+
+  py.test -v prereqs
+
