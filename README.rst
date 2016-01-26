@@ -15,7 +15,7 @@ Know all about installing and developing Python packages and don't feel like rea
 
 * Have Git and Python installed
 * Create and activate a virtualenv
-* Clone this repo (or your own fork of it)
+* Clone this repo (or your own fork of it) and ``cd`` to it.
 * Install the package in editable mode: ``pip install -e .``
 
 ---------------------
