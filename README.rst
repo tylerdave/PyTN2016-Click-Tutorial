@@ -7,9 +7,9 @@ PyTennessee 2016 - Writing Command Line Applications that Click
 
 Tutorial for writing command line applications using click.
 
-------------------
-TL;DR Installation
-------------------
+-----
+TL;DR
+-----
 
 Know all about installing and developing Python packages and don't feel like reading the rest?:
 

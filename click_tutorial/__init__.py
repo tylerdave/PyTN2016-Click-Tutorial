@@ -7,6 +7,3 @@ __email__ = 'tylerdave@tylerdave.com'
 __version__ = get_versions()['version']
 del get_versions
 
-def hello_world():
-    print('Hello, world!')
-    return True
