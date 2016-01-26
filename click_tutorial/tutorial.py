@@ -31,7 +31,7 @@ def cli(step):
         click.secho('Good job!', fg='green')
     else:
         test_module = importlib.import_module('tutorial.step{0}'.format(step))
-        click.secho(str(test_module.__doc__), fg='yellow')
+        click.secho(str(test_module.__doc__), fg='blue')
 
 
 
