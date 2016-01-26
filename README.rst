@@ -54,7 +54,7 @@ If it is already installed, you will see:
 
   source bin/activate
 
-***or on Windows:***
+*or on Windows:*
 
 .. code-block:: console
 
