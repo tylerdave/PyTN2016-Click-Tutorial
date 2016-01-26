@@ -29,36 +29,36 @@ Virtualenv
 The virtualenv package allows you to create isolated environments for
 developing Python code.
 
-**To make sure it is installed, run this command:**
+* To make sure it is installed, run this command:
 
-.. code-block:: console
+  .. code-block:: console
+  
+    pip install virtualenv
 
-  pip install virtualenv
-
-This will either install the package or let you know it's already installed. 
+  This will either install the package or let you know it's already installed. 
 If it is already installed, you will see:
 
-.. code-block:: console
+  .. code-block:: console
+    
+    Requirement already satisfied (use --upgrade to upgrade)
 
-  Requirement already satisfied (use --upgrade to upgrade)
+* Create a virtualenv for this tutorial:
 
-**Create a virtualenv for this tutorial:**
+  .. code-block:: console
+  
+    virtualenv click_tutorial
 
-.. code-block:: console
+* Activate the virtualenv:
 
-  virtualenv click_tutorial
+  .. code-block:: console
+  
+    source bin/activate
 
-**Activate the virtualenv:**
+  *or on Windows:*
 
-.. code-block:: console
+  .. code-block:: console
 
-  source bin/activate
-
-*or on Windows:*
-
-.. code-block:: console
-
-  bin/activate.exe
+    bin/activate.exe
   
 Get The Tutorial
 ----------------
