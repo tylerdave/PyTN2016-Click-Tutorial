@@ -17,11 +17,17 @@ In order to make use of this tutorial you will a system with the following insta
 
 If you do not already have these installed, follow these directions:
 
-Installing Git
-Installing Python
+* `Installing Git`_
+* `Installing Python`_
+
+.. _`Installing Git`: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+.. _`Installing Python`: http://docs.python-guide.org/en/latest/starting/installation/
+
 
 Install Tutorial
 ----------------
 
 The tutorial repo is configured to be a Python package in order to ease
 installation.
+
+
