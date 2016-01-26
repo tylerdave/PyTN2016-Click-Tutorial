@@ -3,7 +3,8 @@
 Tutorial Step 00: Hello, World!
 -------------------------------
 
-This test should be passing already!
+This test should pass when you first start. Once you start adding features it
+will begin to fail.
 
 """
 import unittest
