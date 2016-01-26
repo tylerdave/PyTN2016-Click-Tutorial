@@ -20,7 +20,7 @@ Hello, Dave!
 Hello, Dave!
 
 
-See here: http://click.pocoo.org/latest/arguments/
+See here: http://click.pocoo.org/latest/options/
 """
 import unittest
 from click.testing import CliRunner
