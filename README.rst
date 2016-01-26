@@ -7,9 +7,9 @@ PyTennessee 2016 - Writing Command Line Applications that Click
 
 Tutorial for writing command line applications using click.
 
------
-TL;DR
------
+-------------------
+Installation: TL;DR
+-------------------
 
 Know all about installing and developing Python packages and don't feel like reading the rest?:
 
@@ -18,9 +18,9 @@ Know all about installing and developing Python packages and don't feel like rea
 * Clone this repo (or your own fork of it) and ``cd`` to it.
 * Install the package in editable mode: ``pip install -e .``
 
-----------------------------------
-Detailed Installation Instructions
-----------------------------------
+-----------------------------------
+Installation: Detailed Instructions
+-----------------------------------
 
 Prerequisites
 -------------
