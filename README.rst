@@ -5,16 +5,23 @@ PyTennessee 2016 - Writing Command Line Applications that Click
 .. image:: https://img.shields.io/travis/tylerdave/click_tutorial.svg
         :target: https://travis-ci.org/tylerdave/click_tutorial
 
-.. image:: https://img.shields.io/pypi/v/click_tutorial.svg
-        :target: https://pypi.python.org/pypi/click_tutorial
-
-
 Tutorial for writing command line applications using click.
 
-* Free software: MIT license
-* Documentation: https://click_tutorial.readthedocs.org.
+Prerequisites
+-------------
 
-Features
---------
+In order to make use of this tutorial you will a system with the following installed:
 
-* TODO
+* Git
+* Python (2.7, 3.3, 3.4, 3.5)
+
+If you do not already have these installed, follow these directions:
+
+Installing Git
+Installing Python
+
+Install Tutorial
+----------------
+
+The tutorial repo is configured to be a Python package in order to ease
+installation.
