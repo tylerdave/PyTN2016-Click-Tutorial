@@ -5,7 +5,7 @@ import httpbin
 @click.option('--port', '-p')
 @click.command()
 def run_httpbin(**kwargs):
-    app_kwargs = {k:v for k, v in kwargs.iteritems() if v}
+    app_kwargs = {k:v for k, v in kwargs.items() if v}
     httpbin.core.app.run(**app_kwargs)
 
 if __name__ == '__main__':
