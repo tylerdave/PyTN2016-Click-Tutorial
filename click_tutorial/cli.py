@@ -1,9 +1,8 @@
 import click
 
-@click.argument('name')
 @click.command()
-def cli(name):
-    click.echo("Hello, {0}!".format(name))
+def cli():
+    click.echo("Hello, World!")
 
 if __name__ == '__main__':
     cli()
