@@ -11,5 +11,9 @@ class TestClickTutorial(unittest.TestCase):
         self.runner = CliRunner()
 
     def test_hello_world(self):
-        result = self.runner.invoke(click_tutorial.cli.cli)
+        result = self.runner.invoke(click_tutorial.hello.cli)
         assert result.output == 'Hello, World!\n'
+
+    def test_pytn_command(self):
+        result = self.runner.invoke(click_tutorial.cli.cli, ['http://localhost:5000/get'])
+        assert result.output == 'GET http://localhost:5000/get\n'

@@ -1,8 +1,9 @@
 import click
 
 @click.command()
-def cli():
-    click.echo("Hello, World!")
+@click.argument('url')
+def cli(url):
+    click.echo("GET {0}".format(url))
 
 if __name__ == '__main__':
     cli()

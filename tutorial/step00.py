@@ -10,14 +10,14 @@ will begin to fail.
 import unittest
 from click.testing import CliRunner
 
-import click_tutorial.cli
+import click_tutorial
 
 
-class TestTutorialStep0(unittest.TestCase):
+class TestTutorialStep00(unittest.TestCase):
 
     def setUp(self):
         self.runner = CliRunner()
 
     def test_hello_world(self):
-        result = self.runner.invoke(click_tutorial.cli.cli)
+        result = self.runner.invoke(click_tutorial.hello.cli)
         assert result.output == 'Hello, World!\n'

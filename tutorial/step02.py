@@ -25,10 +25,10 @@ See here: http://click.pocoo.org/latest/options/
 import unittest
 from click.testing import CliRunner
 
-import click_tutorial.cli
+import click_tutorial
 
 
-class TestTutorialStep1(unittest.TestCase):
+class TestTutorialStep02(unittest.TestCase):
 
     def setUp(self):
         self.runner = CliRunner()
@@ -38,5 +38,5 @@ class TestTutorialStep1(unittest.TestCase):
         assert result.output == 'Hello, Dave!\n'
 
     def test_hello_messages_is_output_count_times(self):
-        result = self.runner.invoke(click_tutorial.cli.cli, ['--count', '3', 'Dave'])
+        result = self.runner.invoke(click_tutorial.hello.cli, ['--count', '3', 'Dave'])
         assert result.output == 'Hello, Dave!\nHello, Dave!\nHello, Dave!\n'

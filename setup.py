@@ -49,6 +49,7 @@ setup(
     entry_points={
         'console_scripts':[
             'pytn=click_tutorial.cli:cli',
+	    'hello=click_tutorial.hello:cli',
             'httpbin=click_tutorial.httpbin_runner:run_httpbin',
             'tutorial=click_tutorial.tutorial:cli',
             ],

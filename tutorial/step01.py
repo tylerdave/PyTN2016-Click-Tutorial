@@ -22,14 +22,14 @@ See here: http://click.pocoo.org/latest/arguments/
 import unittest
 from click.testing import CliRunner
 
-import click_tutorial.cli
+import click_tutorial
 
 
-class TestTutorialStep1(unittest.TestCase):
+class TestTutorialStep01(unittest.TestCase):
 
     def setUp(self):
         self.runner = CliRunner()
 
     def test_hello_world_takes_name_option(self):
-        result = self.runner.invoke(click_tutorial.cli.cli, ['Dave'])
+        result = self.runner.invoke(click_tutorial.hello.cli, ['Dave'])
         assert result.output == 'Hello, Dave!\n'
