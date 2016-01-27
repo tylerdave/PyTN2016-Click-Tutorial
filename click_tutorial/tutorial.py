@@ -27,12 +27,13 @@ def cli(step):
 
     result = pytest.main(['-v', 'tutorial/step{0}.py'.format(step)])
 
-    if result == 0:
+    if result == 2:
         click.secho('Good job!', fg='green')
     else:
         test_module = importlib.import_module('tutorial.step{0}'.format(step))
         click.secho(str(test_module.__doc__), fg='blue')
-        test_module.print_directions()
+        test_class = getattr(test_module, 'TestTutorialStep{0}'.format(step))
+        test_class.print_instructions()
 
 
 

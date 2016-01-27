@@ -35,21 +35,21 @@ import click_tutorial
 
 class BaseTutorialStep(unittest.TestCase):
 
+    directions = "make this work!"
+    example_input = "command --help"
+    example_output = "Help!"
+    reference_urls = ['http://www.example.com/']
+
     def setUp(self):
         self.runner = CliRunner()
         self._tutorial_setup()
 
-    def _tutorial_setup(self):
-        self.directions = "make this work!"
-        self.example_input = "command --help"
-        self.example_output = "Help!"
-        self.reference_urls = ['http://www.example.com/']
-
-    def print_instructions(self):
+    @classmethod
+    def print_instructions(cls):
         click.secho('Instructions', bold=True)
-        click.secho(self.directions, fg='blue')
-        click.secho('Example input:', color='white', bold='true')
-        click.secho(self.example_input)
-        click.secho('Example output:', color='white', bold='true')
-        click.secho(self.example_output)
+        click.secho(cls.directions+'\n', fg='blue')
+        click.secho('Example input:', color='white')
+        click.secho(cls.example_input+'\n')
+        click.secho('Example output:', color='white')
+        click.secho(cls.example_output+'\n')
 
