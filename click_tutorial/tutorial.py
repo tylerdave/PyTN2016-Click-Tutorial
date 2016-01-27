@@ -32,8 +32,11 @@ def cli(step):
     else:
         test_module = importlib.import_module('tutorial.step{0}'.format(step))
         click.secho(str(test_module.__doc__), fg='blue')
-        test_class = getattr(test_module, 'TestTutorialStep{0}'.format(step))
-        test_class.print_instructions()
+        try:
+            test_class = getattr(test_module, 'TestTutorialStep{0}'.format(step))
+            test_class.print_instructions()
+        except AttributeError:
+            click.secho('No instructions found for this step!', fg='red')
 
 
 
