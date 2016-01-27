@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Tutorial Step 01: Arguments
----------------------------
+(hello.py) Tutorial Step 01: Arguments
+--------------------------------------
 
 In this step you will be adding a positional argument to your command. It
 should accept a NAME and print that name instead of 'World'.

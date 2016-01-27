@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
-Tutorial Step 02: Options
--------------------------
+(hello.py) Tutorial Step 02: Options
+------------------------------------
 
 In this step you will be adding an optional parameter to your command. It
 should accept --count with a default of 1 and cause the command to output the
@@ -38,7 +38,7 @@ class TestTutorialStep02(unittest.TestCase):
         self.runner = CliRunner()
 
     def test_hello_messages_is_output_1_time_by_default(self):
-        result = self.runner.invoke(click_tutorial.cli.cli, ['PyTN'])
+        result = self.runner.invoke(click_tutorial.hello.cli, ['PyTN'])
         assert result.output == 'Hello, PyTN!\n'
 
     def test_hello_messages_is_output_count_times(self):
