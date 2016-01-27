@@ -10,11 +10,11 @@ Arguments are added using the @click.argument() decorator.
 
 Example Input:
 
-hello Dave
+hello PyTN
 
 Example Output:
 
-Hello, Dave!
+Hello, PyTN!
 
 
 See here: http://click.pocoo.org/latest/arguments/
@@ -31,5 +31,5 @@ class TestTutorialStep01(unittest.TestCase):
         self.runner = CliRunner()
 
     def test_hello_world_takes_name_option(self):
-        result = self.runner.invoke(click_tutorial.hello.cli, ['Dave'])
-        assert result.output == 'Hello, Dave!\n'
+        result = self.runner.invoke(click_tutorial.hello.cli, ['PyTN'])
+        assert result.output == 'Hello, PyTN!\n'

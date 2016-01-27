@@ -11,17 +11,17 @@ Options are added using the @click.option() decorator.
 
 Example Input:
 
-hello --count 3 Dave
+hello --count 3 PyTN
 
 Or:
 
-hello -c 3 Dave
+hello -c 3 PyTN
 
 Example Output:
 
-Hello, Dave!
-Hello, Dave!
-Hello, Dave!
+Hello, PyTN!
+Hello, PyTN!
+Hello, PyTN!
 
 
 See here: http://click.pocoo.org/latest/options/
@@ -38,13 +38,13 @@ class TestTutorialStep02(unittest.TestCase):
         self.runner = CliRunner()
 
     def test_hello_messages_is_output_1_time_by_default(self):
-        result = self.runner.invoke(click_tutorial.cli.cli, ['Dave'])
-        assert result.output == 'Hello, Dave!\n'
+        result = self.runner.invoke(click_tutorial.cli.cli, ['PyTN'])
+        assert result.output == 'Hello, PyTN!\n'
 
     def test_hello_messages_is_output_count_times(self):
-        result = self.runner.invoke(click_tutorial.hello.cli, ['--count', '3', 'Dave'])
-        assert result.output == 'Hello, Dave!\nHello, Dave!\nHello, Dave!\n'
+        result = self.runner.invoke(click_tutorial.hello.cli, ['--count', '3', 'PyTN'])
+        assert result.output == 'Hello, PyTN!\nHello, PyTN!\nHello, PyTN!\n'
 
     def test_hello_messages_is_output_count_times_with_short_option(self):
-        result = self.runner.invoke(click_tutorial.hello.cli, ['-c', '3', 'Dave'])
-        assert result.output == 'Hello, Dave!\nHello, Dave!\nHello, Dave!\n'
+        result = self.runner.invoke(click_tutorial.hello.cli, ['-c', '3', 'PyTN'])
+        assert result.output == 'Hello, PyTN!\nHello, PyTN!\nHello, PyTN!\n'
