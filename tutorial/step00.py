@@ -11,12 +11,10 @@ import unittest
 from click.testing import CliRunner
 
 import click_tutorial
+from .base import BaseTutorialStep
 
 
-class TestTutorialStep00(unittest.TestCase):
-
-    def setUp(self):
-        self.runner = CliRunner()
+class TestTutorialStep00(BaseTutorialStep):
 
     def test_hello_world(self):
         result = self.runner.invoke(click_tutorial.hello.cli)

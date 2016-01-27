@@ -32,6 +32,7 @@ def cli(step):
     else:
         test_module = importlib.import_module('tutorial.step{0}'.format(step))
         click.secho(str(test_module.__doc__), fg='blue')
+        test_module.print_directions()
 
 
 
