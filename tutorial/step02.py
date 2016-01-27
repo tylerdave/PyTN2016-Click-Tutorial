@@ -11,7 +11,11 @@ Options are added using the @click.option() decorator.
 
 Example Input:
 
-pytn --count 3 Dave
+hello --count 3 Dave
+
+Or:
+
+hello -c 3 Dave
 
 Example Output:
 
@@ -39,4 +43,8 @@ class TestTutorialStep02(unittest.TestCase):
 
     def test_hello_messages_is_output_count_times(self):
         result = self.runner.invoke(click_tutorial.hello.cli, ['--count', '3', 'Dave'])
+        assert result.output == 'Hello, Dave!\nHello, Dave!\nHello, Dave!\n'
+
+    def test_hello_messages_is_output_count_times_with_short_option(self):
+        result = self.runner.invoke(click_tutorial.hello.cli, ['-c', '3', 'Dave'])
         assert result.output == 'Hello, Dave!\nHello, Dave!\nHello, Dave!\n'

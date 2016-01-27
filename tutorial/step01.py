@@ -10,7 +10,7 @@ Arguments are added using the @click.argument() decorator.
 
 Example Input:
 
-pytn Dave
+hello Dave
 
 Example Output:
 
