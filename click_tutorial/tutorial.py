@@ -14,7 +14,7 @@ def get_valid_tutorial_steps():
     except OSError as e:
         click.secho(str(e), err=True, fg='red')
         click.secho("No tutorial files found. (This command must be run from" \
-                " within the tutorial repo dir.)", err=True)
+                " within the repo root dir.)", err=True)
         sys.exit(1)
 
 @click.argument('step', type=click.Choice(get_valid_tutorial_steps()))
