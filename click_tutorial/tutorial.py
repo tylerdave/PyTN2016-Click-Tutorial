@@ -27,7 +27,7 @@ def cli(step):
 
     result = pytest.main(['-v', 'tutorial/step{0}.py'.format(step)])
 
-    if result == 2:
+    if result == 0:
         click.secho('Good job!', fg='green')
     else:
         test_module = importlib.import_module('tutorial.step{0}'.format(step))
