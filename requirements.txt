@@ -1,5 +1,2 @@
 click==6.2
 colorama==0.3.6
-httpbin==0.4.0
-reqcli==0.0.1
-requests==2.9.1

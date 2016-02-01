@@ -23,10 +23,6 @@ test_requirements = [
 requirements = [
     'click>=6.0',
     'colorama',
-    'requests>=2.0',
-    'httpbin',
-    'pytest',
-    'reqcli',
 ] + test_requirements
 
 python2_requirements = [
@@ -49,9 +45,8 @@ setup(
     entry_points={
         'console_scripts':[
             'pytn=click_tutorial.cli:cli',
-	    'hello=click_tutorial.hello:cli',
-            'httpbin=click_tutorial.httpbin_runner:run_httpbin',
-            'tutorial=click_tutorial.tutorial:cli',
+            'hello=click_tutorial.hello:cli',
+ #           'tutorial=click_tutorial.tutorial:cli',
             ],
         },
     include_package_data=True,

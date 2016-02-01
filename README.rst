@@ -50,6 +50,12 @@ developing Python code.
   
     pip install virtualenv
 
+  *or on Windows (if the above doesn't work):*
+
+  .. code-block:: console
+
+    python -m pip install virtualenv
+
   This will either install the package or let you know it's already installed. If it is already installed, you will see:
 
   .. code-block:: console
@@ -90,7 +96,7 @@ Install The Tutorial
 The tutorial repo is configured to be a Python package in order to ease
 installation.
 
-* cd to cloned tutorial directory
+* In a terminal/console ``cd`` to cloned tutorial directory
 * Install the package in editable mode:
 
   .. code-block:: console
