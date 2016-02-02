@@ -1,6 +1,4 @@
-"""A setuptools based setup module for click_tutorial"""
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import sys
 from codecs import open
@@ -46,7 +44,7 @@ setup(
         'console_scripts':[
             'pytn=click_tutorial.cli:cli',
             'hello=click_tutorial.hello:cli',
- #           'tutorial=click_tutorial.tutorial:cli',
+            'tutorial=click_tutorial.tutorial:cli',
             ],
         },
     include_package_data=True,
