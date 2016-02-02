@@ -4,7 +4,7 @@ from click.testing import CliRunner
 import click_tutorial
 
 
-class BaseTutorialStep(unittest.TestCase):
+class BaseTutorialLesson(unittest.TestCase):
 
     def setUp(self):
         self.runner = CliRunner()

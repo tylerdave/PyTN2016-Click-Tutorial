@@ -40,6 +40,7 @@ setup(
     author_email='tylerdave@tylerdave.com',
     url='https://github.com/tylerdave/click_tutorial',
     packages=['click_tutorial'],
+    package_data={'click_tutorial': ['data/tutorial_lessons.dat']},
     entry_points={
         'console_scripts':[
             'pytn=click_tutorial.cli:cli',
@@ -47,7 +48,6 @@ setup(
             'tutorial=click_tutorial.tutorial:cli',
             ],
         },
-    include_package_data=True,
     install_requires=requirements,
     license="MIT",
     classifiers=[
