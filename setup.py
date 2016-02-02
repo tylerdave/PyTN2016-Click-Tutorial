@@ -40,12 +40,12 @@ setup(
     author_email='tylerdave@tylerdave.com',
     url='https://github.com/tylerdave/click_tutorial',
     packages=['click_tutorial'],
-    package_data={'click_tutorial': ['data/tutorial_lessons.dat']},
+    package_data={'click_tutorial': ['data/tutorial_lessons.json']},
     entry_points={
         'console_scripts':[
             'pytn=click_tutorial.cli:cli',
             'hello=click_tutorial.hello:cli',
-            'tutorial=click_tutorial.tutorial:cli',
+            'tutorial=click_tutorial.tutorial_runner:cli',
             ],
         },
     install_requires=requirements,

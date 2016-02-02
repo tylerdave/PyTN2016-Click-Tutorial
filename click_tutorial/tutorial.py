@@ -1,9 +1,50 @@
 import click
-import importlib
+import json
 import os
+import pkg_resources
 import pytest
 import re
 import sys
+
+
+PACKAGE_NAME = 'click_tutorial'
+LESSONS_FILE = 'data/tutorial_lessons.json'
+STATUS_FILE = 'status.json'
+
+def load_lessons():
+    with open(pkg_resources.resource_filename(PACKAGE_NAME, LESSONS_FILE)) as lessons_file:
+        return json.load(lessons_file)
+
+def load_lesson_statuses(status_file_name):
+    with open(status_file_name) as status_file:
+        return json.load(status_file)
+
+def save_lesson_statuses(status_file_name, statuses):
+    try:
+        os.makedirs(os.path.dirname(status_file_name))
+    except OSError as e:
+        if e.errno != os.errno.EEXIST:
+            raise
+    with open(status_file_name, 'wb') as status_file:
+        json.dump(statuses, status_file, indent=2)
+
+def get_lessons(status_file_name):
+    try:
+        lessons = load_lessons()
+    except:
+        click.secho("Unable to load lessons file.", err=True, fg='red')
+        click.get_current_context().abort()
+
+    try:
+        statuses = load_lesson_statuses(status_file_name)
+    except:
+        click.secho("Unable to load lesson statuses. Starting from the beginning...",
+                err=True, fg='yellow')
+        statuses = {}
+
+    for lesson_id, lesson_details in lessons.items():
+        lesson_details['status'] = statuses.get(lesson_id, {}).get('status') or 'incomplete'
+    return lessons
 
 def get_valid_tutorial_steps():
     """ Find and return a list of test step modules in the tutorial dir. """
@@ -17,28 +58,9 @@ def get_valid_tutorial_steps():
                 " within the repo root dir.)", err=True)
         sys.exit(1)
 
-@click.argument('step', type=click.Choice(get_valid_tutorial_steps()))
-@click.command()
-def cli(step):
-    """
-    This runs the tutorial
-    """
-    click.echo("Tutorial step {0}".format(step))
-
-    result = pytest.main(['-v', 'tutorial/step{0}.py'.format(step)])
-
+def run_lesson(lesson_test_file):
+    result = pytest.main(['-vx', 'tutorial/{0}'.format(lesson_test_file)])
     if result == 0:
-        click.secho('Good job!', fg='green')
+        return True
     else:
-        test_module = importlib.import_module('tutorial.step{0}'.format(step))
-        click.secho(str(test_module.__doc__), fg='blue')
-        try:
-            test_class = getattr(test_module, 'TestTutorialStep{0}'.format(step))
-            test_class.print_instructions()
-        except AttributeError:
-            click.secho('No instructions found for this step!', fg='red')
-
-
-
-if __name__ == '__main__':
-    cli()
+        return False
