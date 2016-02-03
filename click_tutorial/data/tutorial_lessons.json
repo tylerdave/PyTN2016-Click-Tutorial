@@ -15,5 +15,11 @@
     "title": "Basic Arguments",
     "hint": "Look at click_tutorial/hello.py for an example of @click.argument",
     "url": "http://click.pocoo.org/6/arguments/"
+  }, 
+  "003": {
+    "test_file": "tutorial_basic_subcommands.py", 
+    "title": "Basic Subcommands",
+    "hint": "Subcommands are just like regular commands but then are attached to a function decorated with @click.group()",
+    "url": "http://click.pocoo.org/6/commands/"
   } 
 }
