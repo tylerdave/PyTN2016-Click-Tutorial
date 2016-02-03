@@ -1,14 +1,19 @@
 {
-  "00": {
+  "000": {
     "test_file": "tutorial_hello_world.py", 
-    "title": "Hello, World!"
+    "title": "Hello, World!",
+    "hint": "The initial click_tutorial/cli.py should pass the test."
   }, 
-   "01": {
-    "test_file": "tutorial_basic_arguments.py", 
-    "title": "Basic Arguments"
-  }, 
-  "02": {
+  "001": {
     "test_file": "tutorial_basic_options.py", 
-    "title": "Basic Options"
-  }
+    "title": "Basic Options",
+    "hint": "Look at click_tutorial/hello.py for an example of @click.option",
+    "url": "http://click.pocoo.org/6/options/"
+  },
+  "002": {
+    "test_file": "tutorial_basic_arguments.py", 
+    "title": "Basic Arguments",
+    "hint": "Look at click_tutorial/hello.py for an example of @click.argument",
+    "url": "http://click.pocoo.org/6/arguments/"
+  } 
 }
