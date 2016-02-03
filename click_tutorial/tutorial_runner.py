@@ -9,7 +9,7 @@ from .tutorial import get_lessons, list_lesson_ids, run_lesson, save_lesson_stat
 
 STATUS_FILE = 'status.json'
 
-@click.group()
+@click.group(name='tutorial')
 @click.option('--verbose', '-v')
 @click.pass_context
 def cli(ctx, verbose):

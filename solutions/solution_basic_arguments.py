@@ -1,6 +1,6 @@
 import click
 
-@click.command()
+@click.command(name='pytn')
 @click.argument('names', nargs=-1)
 def cli(names):
     """

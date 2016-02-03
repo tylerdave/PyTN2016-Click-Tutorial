@@ -1,6 +1,6 @@
 import click
 
-@click.command()
+@click.command(name='hello')
 @click.argument('name')
 @click.option('--excited', '-e', is_flag=True)
 def cli(name, excited):

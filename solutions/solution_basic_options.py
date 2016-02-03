@@ -1,6 +1,6 @@
 import click
 
-@click.command()
+@click.command(name='pytn')
 @click.option('--single', '-s')
 @click.option('--multi', '-m', multiple=True)
 @click.option('--enable-feature/--no-enable-feature')

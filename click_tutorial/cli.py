@@ -1,6 +1,6 @@
 import click
 
-@click.command()
+@click.command(name='pytn')
 def cli():
     """
     Output a greeting to PyTennessee!
