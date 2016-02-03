@@ -103,10 +103,10 @@ installation.
   
     pip install -e .
 
-* Run 'prereqs' tests to verify installation:
+* Run tests to verify installation:
 
   .. code-block:: console
   
-    py.test -v prereqs/
+    py.test -v tests/
 
 * Verify that all tests report PASSED
