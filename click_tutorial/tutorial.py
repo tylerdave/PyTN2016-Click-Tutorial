@@ -12,12 +12,22 @@ LESSONS_FILE = 'data/tutorial_lessons.json'
 STATUS_FILE = 'status.json'
 
 def load_lessons():
-    with open(pkg_resources.resource_filename(PACKAGE_NAME, LESSONS_FILE)) as lessons_file:
-        return json.load(lessons_file)
+    try:
+        with open(pkg_resources.resource_filename(PACKAGE_NAME, LESSONS_FILE)) as lessons_file:
+            return json.load(lessons_file)
+    except:
+        click.secho("Unable to load lessons file.", err=True, fg='red')
+        click.get_current_context().abort()
 
 def load_lesson_statuses(status_file_name):
-    with open(status_file_name) as status_file:
-        return json.load(status_file)
+    try:
+        with open(status_file_name) as status_file:
+            return json.load(status_file)
+    except:
+        click.secho("Unable to load lesson statuses. Starting from the beginning...",
+                err=True, fg='yellow')
+        return {}
+
 
 def save_lesson_statuses(status_file_name, statuses):
     try:
@@ -29,22 +39,15 @@ def save_lesson_statuses(status_file_name, statuses):
         json.dump(statuses, status_file, indent=2)
 
 def get_lessons(status_file_name):
-    try:
-        lessons = load_lessons()
-    except:
-        click.secho("Unable to load lessons file.", err=True, fg='red')
-        click.get_current_context().abort()
-
-    try:
-        statuses = load_lesson_statuses(status_file_name)
-    except:
-        click.secho("Unable to load lesson statuses. Starting from the beginning...",
-                err=True, fg='yellow')
-        statuses = {}
-
+    lessons = load_lessons()
+    statuses = load_lesson_statuses(status_file_name)
     for lesson_id, lesson_details in lessons.items():
         lesson_details['status'] = statuses.get(lesson_id, {}).get('status') or 'incomplete'
     return lessons
+
+def list_lesson_ids():
+    lessons = load_lessons()
+    return sorted(lessons)
 
 def get_valid_tutorial_steps():
     """ Find and return a list of test step modules in the tutorial dir. """

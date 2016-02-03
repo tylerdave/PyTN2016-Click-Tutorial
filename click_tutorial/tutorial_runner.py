@@ -5,7 +5,7 @@ import pkg_resources
 import re
 import sys
 
-from .tutorial import get_lessons, run_lesson, save_lesson_statuses
+from .tutorial import get_lessons, list_lesson_ids, run_lesson, save_lesson_statuses
 
 STATUS_FILE = 'status.json'
 
@@ -22,7 +22,7 @@ def cli(ctx, verbose):
 
 
 @cli.command()
-@click.argument('lesson_id')  # TODO: validate choices
+@click.argument('lesson_id', type=click.Choice(list_lesson_ids()))
 @click.pass_context
 def lesson(ctx, lesson_id):
     """
@@ -30,13 +30,21 @@ def lesson(ctx, lesson_id):
     """
     lessons = ctx.obj['lessons']
     lesson = lessons[lesson_id]
-    click.echo("Running lesson {0} {1}...".format(lesson_id, lesson['title']))
+    if lesson['status'] == 'complete':
+        click.confirm(
+                "This less was already completed. Do you want to re-run?", abort=True)
+
+    click.echo("Running tests for lesson {0} {1}...".format(lesson_id, lesson['title']))
 
     result = run_lesson(lesson['test_file'])
     if result:
         lessons[lesson_id]['status'] = 'complete'
+        click.secho("Good job!", fg='green')
     else:
         lessons[lesson_id]['status'] = 'in-progress'
+        click.secho("\nHint: {0}".format(lesson.get('hint')), fg='blue')
+        click.secho("URL: {0}".format(lesson.get('url', 'n/a')), fg='blue')
+
     save_lesson_statuses(ctx.obj['status_filename'], lessons)
 
 
@@ -54,11 +62,13 @@ def reset(ctx):
 
 
 @cli.command()
-@click.argument('lesson_id')
+@click.argument('lesson_id', type=click.Choice(list_lesson_ids()))
 def solve(lesson_id):
     """
-    Copy solution for given LESSON_ID into place.
+    Mark LESSON_ID complete and display solution.
     """
+    # TODO: mark lesson solved
+    # TODO: output solution
     click.echo("Copying solution to click_tutorial/cli.py...")
 
 
@@ -68,7 +78,7 @@ def status(ctx):
     """
     Show the status of the tutorial lessons.
     """
-    click.secho("## Lesson Name                    status\n"
+    click.secho("### Lesson Name                    status\n"
             "---------------------------------------------", bold=True, color='white')
     for lesson_number, lesson_details in sorted(ctx.obj['lessons'].items()):
         status = lesson_details.get('status')
