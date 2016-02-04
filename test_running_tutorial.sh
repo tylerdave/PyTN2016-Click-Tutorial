@@ -12,3 +12,8 @@ do
     tutorial solve "$id"
     tutorial lesson "$id"
 done
+
+tutorial reset --yes
+
+set +e
+git checkout click_tutorial/cli.py
