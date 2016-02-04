@@ -87,6 +87,10 @@ def solve(ctx, lesson_id):
         click.secho(str(e), fg='red')
         ctx.exit(1)
 
+    click.echo('\nSolution file:')
+    with open(dest_file) as solution_file:
+        click.secho(solution_file.read(), fg='green')
+
     click.echo("You may now view the solution file at click_tutorial/cli.py\n" \
                "or run the tests for the lesson with:\n\n" \
                "tutorial lesson {0}".format(lesson_id))
