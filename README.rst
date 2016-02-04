@@ -110,3 +110,14 @@ installation.
     py.test -v tests/
 
 * Verify that all tests report PASSED
+
+Run The Tutorial
+----------------
+
+Once installed, the ``tutorial`` command should be available.
+
+* See usage information
+
+  .. code-block:: console
+
+    tutorial --help

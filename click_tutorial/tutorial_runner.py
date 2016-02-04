@@ -55,6 +55,14 @@ def lesson_ids(ctx):
     click.echo(','.join(sorted(ctx.obj['lessons'].keys())))
 
 @cli.command()
+@click.pass_context
+def next(ctx):
+    """
+    COMING SOON: Run the next lesson.
+    """
+    pass
+
+@cli.command()
 @click.option('--yes', is_flag=True, help="Assume Y to confirmation prompts.")
 @click.pass_context
 def reset(ctx, yes):
@@ -74,7 +82,7 @@ def reset(ctx, yes):
 @click.pass_context
 def solve(ctx, lesson_id):
     """
-    Copy solution for LESSON_ID into place for viewing / testing.
+    Copy solution for LESSON_ID into place.
     """
     lesson = ctx.obj['lessons'][lesson_id]
     click.echo("Copying solution for lesson {0} {1}".format(lesson_id, lesson['title']))
@@ -110,7 +118,7 @@ def status(ctx):
         elif status == 'in-progress':
             color = 'yellow'
         else:
-            color = 'red'
+            color = 'magenta'
 
         click.secho("{0} {1:35} {2}".format(
             lesson_number, lesson_details.get('title'), status), fg=color)
