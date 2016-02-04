@@ -1,29 +1,29 @@
 {
   "000": {
-    "test_file": "tutorial_hello_world.py", 
+    "test_file": "hello_world.py", 
     "title": "Hello, World!",
     "hint": "The initial click_tutorial/cli.py should pass the test."
   }, 
   "001": {
-    "test_file": "tutorial_basic_options.py", 
+    "test_file": "basic_options.py", 
     "title": "Basic Options",
     "hint": "Look at click_tutorial/hello.py for an example of @click.option",
     "url": "http://click.pocoo.org/6/options/"
   },
   "002": {
-    "test_file": "tutorial_basic_arguments.py", 
+    "test_file": "basic_arguments.py", 
     "title": "Basic Arguments",
     "hint": "Look at click_tutorial/hello.py for an example of @click.argument",
     "url": "http://click.pocoo.org/6/arguments/"
   }, 
   "003": {
-    "test_file": "tutorial_basic_subcommands.py", 
+    "test_file": "basic_subcommands.py", 
     "title": "Basic Subcommands",
     "hint": "Subcommands are just like regular commands but then are attached to a function decorated with @click.group()\nLook at click_tutorial/tutorial_runner.py for an example of subcommands in use.",
     "url": "http://click.pocoo.org/6/commands/"
   }, 
   "003": {
-    "test_file": "tutorial_basic_subcommands.py", 
+    "test_file": "basic_subcommands.py", 
     "title": "Basic Subcommands",
     "hint": "Subcommands are just like regular commands but then are attached to a function decorated with @click.group()",
     "url": "http://click.pocoo.org/6/commands/"
