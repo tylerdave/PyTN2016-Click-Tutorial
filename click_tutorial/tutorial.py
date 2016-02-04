@@ -35,7 +35,7 @@ def save_lesson_statuses(status_file_name, statuses):
     except OSError as e:
         if e.errno != os.errno.EEXIST:
             raise
-    with open(status_file_name, 'wb') as status_file:
+    with open(status_file_name, 'w') as status_file:
         json.dump(statuses, status_file, indent=2)
 
 def get_lessons(status_file_name):
