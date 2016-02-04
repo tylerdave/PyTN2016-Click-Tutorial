@@ -15,8 +15,5 @@ def hello():
     """
     click.echo("Hello, PyTN!")
 
-
-
-
 if __name__ == '__main__':
     cli()
