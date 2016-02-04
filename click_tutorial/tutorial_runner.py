@@ -10,9 +10,8 @@ from .tutorial import get_lessons, list_lesson_ids, run_lesson, save_lesson_stat
 STATUS_FILE = 'status.json'
 
 @click.group(name='tutorial')
-@click.option('--verbose', '-v')
 @click.pass_context
-def cli(ctx, verbose):
+def cli(ctx):
     """
     This runs the tutorial
     """
@@ -78,8 +77,8 @@ def status(ctx):
     """
     Show the status of the tutorial lessons.
     """
-    click.secho("### Lesson Name                    status\n"
-            "---------------------------------------------", bold=True, color='white')
+    click.secho("### Lesson Name                         status\n"
+            "--------------------------------------------------", bold=True, color='white')
     for lesson_number, lesson_details in sorted(ctx.obj['lessons'].items()):
         status = lesson_details.get('status')
         if status == 'complete':
@@ -89,7 +88,7 @@ def status(ctx):
         else:
             color = 'red'
 
-        click.secho("{0} {1:30} {2}".format(
+        click.secho("{0} {1:35} {2}".format(
             lesson_number, lesson_details.get('title'), status), fg=color)
 
 
