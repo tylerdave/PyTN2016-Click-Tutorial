@@ -9,4 +9,6 @@ python:
 install:
   - "pip install ."
 # command to run tests
-script: py.test -v
+script:
+  - py.test -v
+  - ./test_running_tutorial.sh
