@@ -9,7 +9,7 @@ env:
   - PYTHONDONTWRITEBYTECODE=1
 # command to install dependencies
 install:
-  - "pip install ."
+    - "pip install -e ."
 # command to run tests
 script:
   - py.test -v
