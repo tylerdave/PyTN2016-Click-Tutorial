@@ -5,6 +5,8 @@ python:
   - "3.4"
   - "3.5"
   - "pypy"
+env:
+  - PYTHONDONTWRITEBYTECODE=1
 # command to install dependencies
 install:
   - "pip install ."
