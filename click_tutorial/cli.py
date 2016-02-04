@@ -1,11 +1,22 @@
 import click
 
-@click.command(name='pytn')
-def cli():
+@click.group(name='pytn')
+@click.option('--input-string1', help='Optional input string.')
+@click.option('--input-string2', metavar='<string>', help='Another optional input string.')
+def cli(do_stuff, input_string1, input_string2):
     """
-    Output a greeting to PyTennessee!
+    Outputs messages.
+    """
+
+@cli.command()
+def hello():
+    """
+    Says hello.
     """
     click.echo("Hello, PyTN!")
+
+
+
 
 if __name__ == '__main__':
     cli()
