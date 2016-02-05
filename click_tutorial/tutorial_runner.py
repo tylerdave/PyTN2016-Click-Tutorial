@@ -7,13 +7,14 @@ from .tutorial import get_lessons, list_lesson_ids, run_lesson, save_lesson_stat
 STATUS_FILE = 'status.json'
 
 @click.group(name='tutorial')
+@click.option('--status-file', default=STATUS_FILE, type=click.Path())
 @click.pass_context
-def cli(ctx):
+def cli(ctx, status_file):
     """
     This runs the tutorial
     """
     ctx.obj = {'status_filename': os.path.join(
-            click.get_app_dir('Click Tutorial'), STATUS_FILE)}
+            click.get_app_dir('Click Tutorial'), status_file)}
     ctx.obj['lessons'] = get_lessons(ctx.obj['status_filename'])
 
 
