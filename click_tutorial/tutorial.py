@@ -45,6 +45,12 @@ def get_lessons(status_file_name):
         lesson_details['status'] = statuses.get(lesson_id, {}).get('status') or 'incomplete'
     return lessons
 
+def get_next_lesson_id(lessons):
+    for lesson_id in sorted(lessons):
+        if lessons[lesson_id]['status'] != 'complete':
+            return lesson_id
+    return None
+
 def list_lesson_ids():
     lessons = load_lessons()
     return sorted(lessons)

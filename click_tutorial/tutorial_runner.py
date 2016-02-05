@@ -2,7 +2,7 @@ import click
 import os
 import shutil
 
-from .tutorial import get_lessons, list_lesson_ids, run_lesson, save_lesson_statuses
+from .tutorial import get_lessons, get_next_lesson_id, list_lesson_ids, run_lesson, save_lesson_statuses
 
 STATUS_FILE = 'status.json'
 
@@ -31,7 +31,8 @@ def lesson(ctx, lesson_id):
         click.confirm(
                 "This less was already completed. Do you want to re-run?", abort=True)
 
-    click.echo("Running tests for lesson {0} {1}...".format(lesson_id, lesson['title']))
+    click.secho("Running tests for lesson {0} {1}...".format(
+        lesson_id, lesson['title']), fg='blue')
 
     result = run_lesson(lesson['test_file'])
     if result:
@@ -59,9 +60,17 @@ def lesson_ids(ctx):
 @click.pass_context
 def next(ctx):
     """
-    COMING SOON: Run the next lesson.
+    Run the next lesson.
     """
-    pass
+    lessons = ctx.obj['lessons']
+    lesson_id = get_next_lesson_id(lessons)
+    next_lesson = lessons[lesson_id]
+
+    click.echo("Running next lesson ({0} {1})...".format(lesson_id,
+        next_lesson['title']))
+
+    ctx.invoke(lesson, lesson_id=lesson_id)
+
 
 @cli.command()
 @click.option('--yes', is_flag=True, help="Assume Y to confirmation prompts.")
