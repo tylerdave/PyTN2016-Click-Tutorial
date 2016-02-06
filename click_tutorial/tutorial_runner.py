@@ -15,8 +15,11 @@ def cli(ctx, status_file):
     """
     ctx.obj = {'status_filename': os.path.join(
             click.get_app_dir('Click Tutorial'), status_file)}
-    ctx.obj['lessons'] = get_lessons(ctx.obj['status_filename'])
-
+    lessons = get_lessons(ctx.obj['status_filename'])
+    if lessons:
+        ctx.obj['lessons'] = lessons
+    else:
+        ctx.abort()
 
 @cli.command()
 @click.argument('lesson_id', type=click.Choice(list_lesson_ids()))

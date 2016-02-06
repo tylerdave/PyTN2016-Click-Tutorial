@@ -15,9 +15,9 @@ def load_lessons():
     try:
         with open(pkg_resources.resource_filename(PACKAGE_NAME, LESSONS_FILE)) as lessons_file:
             return json.load(lessons_file)
-    except:
-        click.secho("Unable to load lessons file.", err=True, fg='red')
-        click.get_current_context().abort()
+    except Exception as e:
+        click.secho("Unable to load lessons file: {0}".format(e), err=True, fg='red')
+        return None
 
 def load_lesson_statuses(status_file_name):
     try:
@@ -40,6 +40,8 @@ def save_lesson_statuses(status_file_name, statuses):
 
 def get_lessons(status_file_name):
     lessons = load_lessons()
+    if not lessons:
+        return None
     statuses = load_lesson_statuses(status_file_name)
     for lesson_id, lesson_details in lessons.items():
         lesson_details['status'] = statuses.get(lesson_id, {}).get('status') or 'incomplete'
@@ -53,7 +55,8 @@ def get_next_lesson_id(lessons):
 
 def list_lesson_ids():
     lessons = load_lessons()
-    return sorted(lessons)
+    if lessons:
+        return sorted(lessons)
 
 def get_valid_tutorial_steps():
     """ Find and return a list of test step modules in the tutorial dir. """
