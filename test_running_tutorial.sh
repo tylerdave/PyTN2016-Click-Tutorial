@@ -14,7 +14,5 @@ do
     tutorial --status-file "$TEST_STATUS_FILE" lesson "$id"
 done
 
-tutorial --status-file "$TEST_STATUS_FILE" reset --yes
-
 set +e
 git checkout click_tutorial/cli.py
