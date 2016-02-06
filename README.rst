@@ -88,7 +88,7 @@ Get The Tutorial
 
   .. code-block:: console
   
-    git clone https://github.com/tylerdave/PyTN2016-Click-Tutorial.git
+    git clone https://github.com/tylerdave/PyTN2016-Click-Tutorial.git pytn
 
 Install The Tutorial
 --------------------
@@ -96,7 +96,7 @@ Install The Tutorial
 The tutorial repo is configured to be a Python package in order to ease
 installation.
 
-* In a terminal/console ``cd`` to cloned tutorial directory
+* In a terminal/console ``cd`` to cloned tutorial directory: ``cd pytn``
 * Install the package in editable mode:
 
   .. code-block:: console
