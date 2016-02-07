@@ -43,7 +43,8 @@ def lesson(ctx, lesson_id):
         click.secho("Good job!", fg='green')
     else:
         lessons[lesson_id]['status'] = 'in-progress'
-        click.secho("\nHint: {0}".format(lesson.get('hint')), fg='blue')
+	click.secho("\nTest: tutorial/{0}".format(lesson.get('test_file')), fg='blue')
+        click.secho("Hint: {0}".format(lesson.get('hint')), fg='blue')
         click.secho("URL: {0}".format(lesson.get('url', 'n/a')), fg='blue')
 
     save_lesson_statuses(ctx.obj['status_filename'], lessons)
