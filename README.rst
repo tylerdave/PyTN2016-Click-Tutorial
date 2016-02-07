@@ -12,8 +12,11 @@ About
 -----
 
 Abstract: https://www.pytennessee.org/schedule/presentation/117/ 
+
 Repo: https://github.com/tylerdave/PyTN2016-Click-Tutorial
+
 Slides: https://speakerdeck.com/tylerdave/pytennessee-2016-writing-command-line-applications-that-click
+
 Follow-up: COMING SOON
 
 -------------------
