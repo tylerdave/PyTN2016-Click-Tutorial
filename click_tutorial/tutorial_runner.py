@@ -67,7 +67,10 @@ def next(ctx):
     """
     lessons = ctx.obj['lessons']
     lesson_id = get_next_lesson_id(lessons)
-    next_lesson = lessons[lesson_id]
+    next_lesson = lessons.get(lesson_id)
+    if not next_lesson:
+        click.secho("Congratulations! You've completed all lessons.", fg='blue')
+        ctx.abort()
 
     click.echo("Running next lesson ({0} {1})...".format(lesson_id,
         next_lesson['title']))
