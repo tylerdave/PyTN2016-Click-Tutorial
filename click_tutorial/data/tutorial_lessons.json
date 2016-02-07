@@ -29,35 +29,35 @@
     "title": "Basic Help / Usage Documentation", 
     "url": "http://click.pocoo.org/6/documentation/"
   }, 
-  "103": {
+  "008": {
     "test_file": "option_prompts.py", 
     "title": "Option Prompts", 
     "url": "http://click.pocoo.org/6/options/#prompting"
   }, 
-  "104": {
+  "009": {
     "test_file": "input_prompts.py", 
     "title": "Input Prompts", 
     "url": "http://click.pocoo.org/6/prompts/#input-prompts"
   }, 
-  "100": {
+  "005": {
     "test_file": "basic_types.py", 
     "title": "Basic Types", 
     "url": "http://click.pocoo.org/5/parameters/#parameter-types"
   }, 
-  "101": {
+  "006": {
     "test_file": "file_types.py", 
     "title": "File Types"
   }, 
-  "102": {
+  "007": {
     "test_file": "choice_types.py", 
     "title": "Choice Types"
   }, 
-  "200": {
+  "010": {
     "test_file": "utility_echo_style.py", 
     "title": "Utilities: echo, style, secho", 
     "url": "http://click.pocoo.org/6/utils/#printing-to-stdout"
   }, 
-  "201": {
+  "011": {
     "test_file": "utility_progressbar.py", 
     "title": "Utility: progressbar", 
     "url": "http://click.pocoo.org/6/utils/#showing-progress-bars"
