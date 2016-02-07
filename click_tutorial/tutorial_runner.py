@@ -11,7 +11,7 @@ STATUS_FILE = 'status.json'
 @click.pass_context
 def cli(ctx, status_file):
     """
-    This runs the tutorial
+    Runs the tutorial.
     """
     ctx.obj = {'status_filename': os.path.join(
             click.get_app_dir('Click Tutorial'), status_file)}
