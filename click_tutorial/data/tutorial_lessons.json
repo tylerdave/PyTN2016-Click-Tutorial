@@ -30,7 +30,7 @@
     "url": "http://click.pocoo.org/6/documentation/"
   },
  "100": {
-    "test_file": "prompts.py", 
+    "test_file": "option_prompts.py", 
     "title": "Prompt Options",
     "url": "http://click.pocoo.org/6/options/#prompting"
   },
