@@ -5,10 +5,8 @@ import click
 @click.option('--excited', '-e', is_flag=True)
 def cli(name, excited):
     """ Given a NAME, outputs a greeting. """
-    if excited:
-        click.echo("Hello, {0}!".format(name))
-    else:
-        click.echo("Hello, {0}.".format(name))
+    punctuation = '!' if excited else '.'
+    click.echo("Hello, {0}{1}".format(name, punctuation))
 
 if __name__ == '__main__':
     cli()
