@@ -106,7 +106,7 @@ def solve(ctx, lesson_id):
     dest_file = 'click_tutorial/cli.py'
     try:
         click.echo("copy: {0} -> {1}".format(source_file, dest_file))
-        shutil.copy(source_file, dest_file)
+        shutil.copyfile(source_file, dest_file)
     except IOError as e:
         click.secho(str(e), fg='red')
         ctx.exit(1)
