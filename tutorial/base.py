@@ -10,6 +10,6 @@ class BaseTutorialLesson(unittest.TestCase):
         self.runner = CliRunner()
         self.command = click_tutorial.cli.cli
 
-    def run_command(self, arguments=None):
-        result = self.runner.invoke(self.command, arguments)
+    def run_command(self, arguments=None, **kwargs):
+        result = self.runner.invoke(self.command, arguments, **kwargs)
         return result
