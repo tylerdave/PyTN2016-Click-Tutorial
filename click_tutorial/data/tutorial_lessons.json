@@ -28,17 +28,23 @@
     "title": "Basic Help / Usage Documentation",
     "hint": "Help / usage documentation is generated from command functions' docstrings and options' help= params.",
     "url": "http://click.pocoo.org/6/documentation/"
-  }, 
-  "100": {
+  },
+ "100": {
+    "test_file": "prompts.py", 
+    "title": "Prompt Options",
+    "url": "http://click.pocoo.org/6/options/#prompting"
+  },
+
+  "101": {
     "test_file": "basic_types.py", 
     "title": "Basic Types",
     "url": "http://click.pocoo.org/5/parameters/#parameter-types"
   },
-   "101": {
+   "102": {
     "test_file": "file_types.py", 
     "title": "File Types"
   },
-    "102": {
+    "103": {
     "test_file": "choice_types.py", 
     "title": "Choice Types"
   },
