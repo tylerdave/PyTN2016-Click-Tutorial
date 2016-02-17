@@ -10,7 +10,7 @@ tutorial --status-file "$TEST_STATUS_FILE" reset --yes
 for id in $lesson_ids
 do
     echo "Testing lesson $id..."
-    tutorial --status-file "$TEST_STATUS_FILE" solve "$id"
+    tutorial --status-file "$TEST_STATUS_FILE" solve --yes "$id"
     tutorial --status-file "$TEST_STATUS_FILE" lesson "$id"
 done
 

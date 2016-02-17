@@ -96,25 +96,36 @@ def reset(ctx, yes):
 
 @cli.command()
 @click.argument('lesson_id', type=click.Choice(list_lesson_ids()))
+@click.option('--yes', is_flag=True, help="Assume Y to confirmation prompts.")
+@click.option('--view-only', is_flag=True, help="Only view the solution. Do not copy.")
 @click.pass_context
-def solve(ctx, lesson_id):
+def solve(ctx, lesson_id, yes, view_only):
     """
-    Copy solution for LESSON_ID into place.
+    View / copy LESSON_ID into place.
     """
     lesson = ctx.obj['lessons'][lesson_id]
-    click.echo("Copying solution for lesson {0} {1}".format(lesson_id, lesson['title']))
+    click.echo("Solution for lesson {0} {1}:\n".format(lesson_id, lesson['title']))
     source_file = os.path.join('solutions/', lesson['test_file'])
     dest_file = 'click_tutorial/cli.py'
+
+    click.secho(79*'-', fg='blue')
+    with open(source_file) as solution_file:
+        click.secho(solution_file.read(), fg='green')
+    click.secho(79*'-', fg='blue')
+
+    if view_only:
+        return
+
+    if not yes:
+        click.confirm("NOTE: If you proceed you will lose any changes you have made to {0}.\n"
+            "Overwrite {0} with solution?".format(dest_file), abort=True)
+
     try:
         click.echo("copy: {0} -> {1}".format(source_file, dest_file))
         shutil.copyfile(source_file, dest_file)
     except IOError as e:
         click.secho(str(e), fg='red')
         ctx.exit(1)
-
-    click.echo('\nSolution file:')
-    with open(dest_file) as solution_file:
-        click.secho(solution_file.read(), fg='green')
 
     click.echo("You may now view the solution file at click_tutorial/cli.py\n" \
                "or run the tests for the lesson with:\n\n" \
