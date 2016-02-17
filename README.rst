@@ -17,7 +17,7 @@ Repo: https://github.com/tylerdave/PyTN2016-Click-Tutorial
 
 Slides: https://speakerdeck.com/tylerdave/pytennessee-2016-writing-command-line-applications-that-click
 
-Follow-up: COMING SOON
+Follow-up: http://daveops.com/pytn2016
 
 -------------------
 Installation: TL;DR
