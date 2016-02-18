@@ -1,0 +1,27 @@
+environment:
+  matrix:
+    - PYTHON: "C:\\Python27"
+    - PYTHON: "C:\\Python27-x64"
+    - PYTHON: "C:\\Python33"
+    - PYTHON: "C:\\Python33-x64"
+    - PYTHON: "C:\\Python34"
+    - PYTHON: "C:\\Python34-x64"
+    - PYTHON: "C:\\Python35"
+    - PYTHON: "C:\\Python35-x64"
+
+install:
+  - "%PYTHON%\\python.exe -m pip install -e ."
+
+build: off
+
+test_script:
+    - "%PYTHON%\\python.exe -m pytest -v"
+
+#after_test:
+    # None
+
+#artifacts:
+    # None
+
+#on_success:
+    # None
