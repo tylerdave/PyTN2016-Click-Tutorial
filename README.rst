@@ -5,6 +5,9 @@ PyTennessee 2016 - Writing Command Line Applications that Click
 .. image:: https://travis-ci.org/tylerdave/PyTN2016-Click-Tutorial.svg?branch=master
     :target: https://travis-ci.org/tylerdave/PyTN2016-Click-Tutorial
 
+.. image:: https://ci.appveyor.com/api/projects/status/ad58tqwj8rj0bida?svg=true
+    :target: https://ci.appveyor.com/project/tylerdave/pytn2016-click-tutorial
+
 Tutorial for writing command line applications using click.
 
 -----
